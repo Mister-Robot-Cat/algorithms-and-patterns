@@ -6,6 +6,13 @@ T = TypeVar("T")
 def binary_search(arr: Sequence[T], target: T) -> Optional[int]:
     """Perform standard binary search on a sorted sequence.
     
+    Args:
+        arr: Sorted sequence of elements supporting comparison.
+        target: The value to search for.
+        
+    Returns:
+        Index of the target if found, otherwise None.
+    
     Time Complexity: O(log n)
     Space Complexity: O(1)
     """

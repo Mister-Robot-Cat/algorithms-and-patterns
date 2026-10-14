@@ -6,22 +6,16 @@ T = TypeVar("T")
 def binary_search(arr: Sequence[T], target: T) -> Optional[int]:
     """Perform standard binary search on a sorted sequence.
     
-    Args:
-        arr: Sorted sequence of elements supporting comparison.
-        target: The value to search for.
-        
-    Returns:
-        Index of the target if found, otherwise None.
-    
     Time Complexity: O(log n)
     Space Complexity: O(1)
     """
     left, right = 0, len(arr) - 1
     while left <= right:
-        mid = left + (right - left) // 2
-        if arr[mid] == target:
+        mid = (left + right) // 2
+        val = arr[mid]
+        if val == target:
             return mid
-        elif arr[mid] < target:
+        elif val < target:
             left = mid + 1
         else:
             right = mid - 1
@@ -31,7 +25,7 @@ def find_leftmost(arr: Sequence[T], target: T) -> int:
     """Find index of leftmost insertion point for target in sorted sequence."""
     left, right = 0, len(arr)
     while left < right:
-        mid = left + (right - left) // 2
+        mid = (left + right) // 2
         if arr[mid] < target:
             left = mid + 1
         else:

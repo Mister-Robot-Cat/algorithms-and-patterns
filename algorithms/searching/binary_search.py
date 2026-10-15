@@ -11,11 +11,10 @@ def binary_search(arr: Sequence[T], target: T) -> Optional[int]:
     """
     left, right = 0, len(arr) - 1
     while left <= right:
-        mid = (left + right) // 2
-        val = arr[mid]
-        if val == target:
+        mid = left + (right - left) // 2
+        if arr[mid] == target:
             return mid
-        elif val < target:
+        elif arr[mid] < target:
             left = mid + 1
         else:
             right = mid - 1
@@ -25,7 +24,7 @@ def find_leftmost(arr: Sequence[T], target: T) -> int:
     """Find index of leftmost insertion point for target in sorted sequence."""
     left, right = 0, len(arr)
     while left < right:
-        mid = (left + right) // 2
+        mid = left + (right - left) // 2
         if arr[mid] < target:
             left = mid + 1
         else:

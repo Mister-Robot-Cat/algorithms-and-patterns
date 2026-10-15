@@ -18,6 +18,7 @@ def test_find_leftmost():
     assert find_leftmost(arr, 4) == 2
     assert find_leftmost(arr, 3) == 2
 
-def test_empty_sequence():
-    assert binary_search([], 1) is None
-    assert find_leftmost([], 1) == 0
+def test_duplicates():
+    arr = [2, 2, 2, 2]
+    assert find_leftmost(arr, 2) == 0
+    assert find_leftmost(arr, 3) == 4

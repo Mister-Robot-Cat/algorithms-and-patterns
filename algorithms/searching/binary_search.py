@@ -30,22 +30,3 @@ def find_leftmost(arr: Sequence[T], target: T) -> int:
         else:
             right = mid
     return left
-
-def find_rightmost(arr: Sequence[T], target: T) -> int:
-    """Find index of rightmost insertion point for target in sorted sequence.
-
-    Returns the index just past the last element equal to target, so
-    ``find_rightmost(arr, x) - find_leftmost(arr, x)`` is the number of
-    occurrences of ``x`` in ``arr``.
-
-    Time Complexity: O(log n)
-    Space Complexity: O(1)
-    """
-    left, right = 0, len(arr)
-    while left < right:
-        mid = left + (right - left) // 2
-        if target < arr[mid]:
-            right = mid
-        else:
-            left = mid + 1
-    return left

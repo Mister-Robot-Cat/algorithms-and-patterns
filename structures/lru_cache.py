@@ -58,3 +58,5 @@ class LRUCache:
             if lru_node and lru_node != self.head:
                 self._remove(lru_node)
                 del self.cache[lru_node.key]
+
+# Refined on 2026-10-20

@@ -17,3 +17,5 @@ def test_find_leftmost():
     arr = [1, 2, 4, 4, 4, 5, 8]
     assert find_leftmost(arr, 4) == 2
     assert find_leftmost(arr, 3) == 2
+
+# Refined on 2026-10-20

@@ -39,3 +39,24 @@ def test_empty_sequence():
     assert binary_search([], 1) is None
     assert find_leftmost([], 1) == 0
     assert find_rightmost([], 1) == 0
+
+
+def test_all_identical_elements():
+    arr = [3, 3, 3, 3]
+    assert find_leftmost(arr, 3) == 0
+    assert find_rightmost(arr, 3) == 4
+    assert find_leftmost(arr, 2) == 0
+    assert find_rightmost(arr, 2) == 0
+    assert find_leftmost(arr, 4) == 4
+    assert find_rightmost(arr, 4) == 4
+
+
+def test_single_element():
+    arr = [5]
+    assert binary_search(arr, 5) == 0
+    assert binary_search(arr, 2) is None
+    assert find_leftmost(arr, 5) == 0
+    assert find_rightmost(arr, 5) == 1
+    assert find_leftmost(arr, 1) == 0
+    assert find_rightmost(arr, 10) == 1
+

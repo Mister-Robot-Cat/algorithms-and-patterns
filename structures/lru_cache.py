@@ -12,7 +12,7 @@ class Node:
 class LRUCache:
     """Least Recently Used (LRU) Cache.
     
-    Provides O(1) amortized get and put operations via hash map and doubly linked list.
+    Provides O(1) get and put operations.
     """
     def __init__(self, capacity: int):
         if capacity <= 0:

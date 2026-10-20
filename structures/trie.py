@@ -10,6 +10,13 @@ class Trie:
     """Prefix Tree supporting insert, search, and prefix matching."""
     def __init__(self):
         self.root = TrieNode()
+        self._size: int = 0
+
+    def __len__(self) -> int:
+        return self._size
+
+    def __contains__(self, word: str) -> bool:
+        return self.search(word)
 
     def insert(self, word: str) -> None:
         node = self.root
@@ -17,7 +24,9 @@ class Trie:
             if char not in node.children:
                 node.children[char] = TrieNode()
             node = node.children[char]
-        node.is_end_of_word = True
+        if not node.is_end_of_word:
+            node.is_end_of_word = True
+            self._size += 1
 
     def search(self, word: str) -> bool:
         node = self._find_node(word)

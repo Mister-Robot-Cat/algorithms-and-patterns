@@ -1,0 +1,45 @@
+# Algorithms, Data Structures & Python Patterns 🚀
+
+[![CI](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+A curated collection of clean, well-tested implementations of core computer science algorithms, data structures, design patterns, and production backend utilities in modern Python.
+
+## 📦 Directory Structure
+
+```text
+algorithms/
+  ├── searching/      # Binary search, bounds, interpolation
+  ├── sorting/        # QuickSort 3-way, MergeSort, HeapSort
+  ├── graphs/         # Dijkstra, BFS, DFS, Topological sort
+  └── dynamic/        # Knapsack, LCS, Coin change
+structures/
+  ├── lru_cache.py    # O(1) Doubly Linked List cache
+  ├── trie.py         # Prefix tree with autocomplete
+  └── heap.py         # Binary min/max heap
+patterns/
+  ├── behavioral/     # Strategy, Observer, Command
+  ├── creational/     # Factory, Builder, Singleton
+  └── structural/     # Decorator, Adapter, Facade
+utils/
+  ├── retry.py        # Exponential backoff decorator
+  └── rate_limiter.py # Token Bucket rate limiter
+tests/
+  └── ...             # Comprehensive pytest test suite
+```
+
+## ⏱️ Complexity Matrix
+
+| Algorithm / Structure | Time Complexity (Avg) | Time Complexity (Worst) | Space Complexity |
+| :--- | :--- | :--- | :--- |
+| **Binary Search** | $O(\log n)$ | $O(\log n)$ | $O(1)$ |
+| **QuickSort (3-Way)** | $O(n \log n)$ | $O(n^2)$ | $O(\log n)$ |
+| **LRU Cache** | $O(1)$ | $O(1)$ | $O(n)$ |
+| **Trie Lookup** | $O(k)$ | $O(k)$ | $O(n \cdot k)$ |
+
+## 🧪 Testing
+
+Run tests with `pytest`:
+```bash
+pytest tests/ -v
+```

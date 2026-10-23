@@ -8,6 +8,10 @@ class TokenBucketRateLimiter:
     Refills capacity tokens per fill_rate seconds.
     """
     def __init__(self, capacity: int, refill_rate: float):
+        if capacity <= 0:
+            raise ValueError("Capacity must be positive")
+        if refill_rate < 0:
+            raise ValueError("Refill rate must be non-negative")
         self.capacity = float(capacity)
         self.tokens = float(capacity)
         self.refill_rate = refill_rate  # tokens per second
@@ -15,6 +19,8 @@ class TokenBucketRateLimiter:
 
     def consume(self, tokens: int = 1) -> bool:
         """Attempt to consume tokens. Returns True if granted, False otherwise."""
+        if tokens <= 0:
+            raise ValueError("Tokens to consume must be positive")
         now = time.monotonic()
         elapsed = now - self.last_update
         self.last_update = now
